@@ -2,7 +2,7 @@
 function initial_data(){
     var dropdown_ids = d3.select("#selDataset");
     d3.json("samples.json").then((incomingData) => {
-        //console.log(incomingData)
+        console.log(incomingData)
         var patientnames = incomingData.names;       
         //console.log(testnames);
 
@@ -100,8 +100,8 @@ function patientdemographics(patient){
 
 //Keep changing the patient details based on dropdown bar selection
 function optionChanged(patient){
-    patientmetadata(patient);
     patientdemographics(patient);
+    patientcharts(patient);
 }
 
 //making sure the initial function for drop down loads automatically
